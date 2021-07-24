@@ -1,0 +1,21 @@
+.quantitybtn .btn-outline-dark{
+   transition:all 1s ease-out;
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+.quantitybtn .btn-outline-dark:hover{
+   color: #fff;
+   background-color: #0dcaf0;
+   border: none;
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+
+.count{
+   padding-left: 7px;
+   padding-right: 7px;
+   color: #0dcaf0;
+   font-weight: 700;
+}
