@@ -7,8 +7,7 @@ import styles from '../scss/Quantity.module.scss';
 function Quantity({ product }) {
   const [items, setItems] = useRecoilState(cartItems);
 
-console.log('items', items)
-console.log('product id', product.id)
+console.log('cart items in quantity', items)
   const increase = (id) => {
     console.log('increase id', id)
     if (!(id in items)) {

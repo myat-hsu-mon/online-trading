@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 import Quantity from './Quantity';
 import styles from '../scss/ProductCard.module.scss';
 
-function ProductCard({ product, showDetail }) {
+function ProductCard({ product, showDetail, showHorizontal }) {
   console.log('product is: ', product)
   return (
     <Card bg='light' className={`${styles.card} ${showDetail && styles.cardDetail}`}>

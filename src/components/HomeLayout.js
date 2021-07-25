@@ -1,9 +1,11 @@
+import { Link } from '@reach/router';
 import Cookies from 'js-cookie';
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { cartItems, profile, token, totalCount } from '../utilities/recoil';
 import Loading from './Loading';
+import styles from '../scss/Image.module.scss'
 
 function HomeLayout({ isLoading, children }) {
   const [userToken, setUserToken] = useRecoilState(token);
@@ -28,9 +30,14 @@ function HomeLayout({ isLoading, children }) {
           {
             userToken ? (
               <Nav className='justify-content-end'>
-                <Nav.Link href='/cart'>
-                  {/* <img src='/carticon.jpg' alt=''/> */}Cart {(countOfCart>0) ? countOfCart : ''}
-                </Nav.Link>
+                {/* <Nav.Link href='/cart'>
+                  <img src='/carticon.jpg' alt=''/>
+                  Cart {(countOfCart>0) ? countOfCart : ''}
+                </Nav.Link> */}
+                <Link to='/cart'>
+                  <img src='carticon.png' alt='cart' className={styles.icon}/>
+                  {(countOfCart>0 ? countOfCart: '')}
+                </Link>
                 <Nav.Link href='/profile'>{userProfile.name}</Nav.Link>
                 <Nav.Link onClick={()=> handleSignOut()}>Sign Out</Nav.Link>
               </Nav>
